@@ -127,6 +127,13 @@ select
 from clients c 
 left join accounts a on c.id = a.client_id;
 
+//con las vistas abreviamos las consultas
+
+select * from
+v_clients_accounts;
+
+
+
 CREATE VIEW v_accounts_types AS
 select 
 	a.account_no,
@@ -135,6 +142,13 @@ select
 	a.balance
 from accounts a  
 left join clients c on a.client_id = c.id;
+
+//con las vistas abreviamos las consultas
+
+select * from
+v_accounts_types
+where a.type = 'ahorro';
+
 
 CREATE VIEW v_transactions_details AS
 select
